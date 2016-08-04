@@ -1,3 +1,20 @@
+class Recipes():
+    def __init__(self):
+        self.master_recipe = {
+            'Rabbit Cider Soup': {
+                'subrecipe': {'id': 1, 'value': 'Cider'},
+                'time': 100
+            },
+            'Ayu Sushi': {
+                'subrecipe': {'id': 0, 'value': ''},
+                'time': 200
+            }
+        }
+
+    def get_cooking_time(self, recipe):
+        return self.master_recipe[recipe]['time']
+
+
 class Orders():
     def get_recipes(self):
         recipes = [
@@ -25,5 +42,7 @@ class Orders():
 
 
 if __name__ == '__main__':
-    x = Orders()
-    print x.create_order()
+    # x = Orders()
+    # print x.create_order()
+    x = Recipes()
+    print x.get_cooking_time('Ayu Sushi')
